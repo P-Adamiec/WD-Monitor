@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WD Monitor</title>
+    <link rel="icon" href="https://www.westerndigital.com/content/dam/store/en-us/assets/favicon/favicon.ico"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <main class="glass-container">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="pulse-ring" id="status-ring"></div>
+                    <h1>WD <span class="accent">Monitor</span></h1>
+                </div>
+                <p class="subtitle" data-i18n="subtitle">Live multi-product availability tracker</p>
+            </div>
+            <div class="lang-flags" style="display:flex;gap:6px;position:absolute;top:16px;right:20px;">
+                <button class="lang-btn" onclick="setLanguage('pl')" title="Polski"><span
+                        class="fi fi-pl"></span></button>
+                <button class="lang-btn" onclick="setLanguage('en')" title="English"><span
+                        class="fi fi-us"></span></button>
+                <button class="lang-btn" onclick="setLanguage('de')" title="Deutsch"><span
+                        class="fi fi-de"></span></button>
+            </div>
+        </header>
+
+        <section class="tracked-section">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <h2 class="section-title" style="margin:0" data-i18n="tracked_products">Tracked Products</h2>
+                    <label class="ios-toggle" title="Toggle monitoring">
+                        <input type="checkbox" id="setting-monitoring-active" onchange="toggleMonitoring()" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div style="display:flex;align-items:center;gap:4px;margin-left:8px;">
+                        <span style="font-size:0.7rem;color:var(--text-secondary);white-space:nowrap;"
+                            data-i18n="check_interval">Interval</span>
+                        <input type="number" id="setting-check-interval" min="10" max="600" value="90"
+                            style="width:52px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:3px 6px;border-radius:6px;font-size:0.75rem;text-align:center;"
+                            onchange="saveCheckInterval()">
+                        <span style="font-size:0.65rem;color:var(--text-secondary);">s</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <div id="bulk-actions" style="display:none;gap:6px;align-items:center;">
+                        <span id="bulk-count" style="font-size:0.75rem;color:var(--text-secondary)"></span>
+                        <button class="btn-secondary" onclick="bulkToggleNotify()" title="Toggle notifications"
+                            style="padding:3px 8px;font-size:0.7rem;">🔔 Toggle</button>
+                        <button class="btn-secondary" onclick="bulkDelete()" title="Delete selected"
+                            style="padding:3px 8px;font-size:0.7rem;color:var(--danger);">🗑️ <span
+                                data-i18n="delete">Delete</span></button>
+                        <button class="btn-secondary" onclick="clearBulkSelection()" title="Cancel"
+                            style="padding:3px 8px;font-size:0.7rem;">✕</button>
+                    </div>
+                    <label class="select-all-label" data-i18n-title="select_all">
+                        <input type="checkbox" id="bulk-select-all" onclick="toggleBulkSelectAll()">
+                        <span data-i18n="select_all">Select all</span>
+                    </label>
+                    <button class="btn-secondary" onclick="openLogsModal()" title="System Logs"
+                        style="padding:4px 12px;font-size:0.8rem;display:flex;align-items:center;gap:4px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                        <span data-i18n="logs">Logs</span>
+                    </button>
+                    <button id="sort-toggle-btn" class="btn-secondary" onclick="toggleSortOrder()" title="Change order"
+                        style="padding:4px 12px;font-size:0.8rem;display:flex;align-items:center;gap:4px;">
+                        <span id="sort-icon">↓</span> <span id="sort-label" data-i18n="newest">Newest</span>
+                    </button>
+                </div>
+            </div>
+            <div class="targets-grid" id="targets-container">
+                <!-- Tracked product cards loaded by JS -->
+            </div>
+        </section>
+
+        <section class="catalog-store-section">
+            <div class="store-layout">
+                <aside class="store-sidebar">
+                    <h3 class="sidebar-title" data-i18n="filter_products">Filter Products</h3>
+                    <div class="filter-group">
+                        <div class="filter-header" data-i18n="category">Category</div>
+                        <div class="filter-options" id="category-filters">
+                            <span class="text-secondary" style="font-size:0.8rem;">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-header" data-i18n="drive_series">Drive Series</div>
+                        <div class="filter-options" id="model-filters">
+                            <span class="text-secondary" style="font-size:0.8rem;">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-header" data-i18n="capacity">Capacity</div>
+                        <div class="filter-options" id="capacity-filters">
+                            <span class="text-secondary" style="font-size:0.8rem;">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-header" data-i18n="notifications">Notifications</div>
+                        <label class="checkbox-label" style="display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" id="setting-sound" class="custom-checkbox"
+                                onchange="saveGlobalSettings()">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text" data-i18n="play_alert_sound">Play alert sound</span>
+                        </label>
+                        <label class="checkbox-label" style="display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" id="setting-push" class="custom-checkbox"
+                                onchange="saveGlobalSettings()">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text" data-i18n="browser_notifications">Browser notifications</span>
+                        </label>
+                        <label class="checkbox-label" style="display:flex; align-items:center; gap:8px;">
+                            <input type="checkbox" id="setting-discord" class="custom-checkbox"
+                                onchange="saveGlobalSettings()">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text" data-i18n="send_discord">Send Discord messages</span>
+                        </label>
+                        <div style="margin-top:6px;">
+                            <div class="notif-accordion-header" onclick="toggleNotifAccordion()">
+                                <span style="font-size:0.75rem;color:var(--text-secondary)"
+                                    data-i18n="discord_webhook">Discord Webhook</span>
+                                <span class="accordion-arrow">▼</span>
+                            </div>
+                            <div class="notif-accordion-body" id="discord-accordion-body">
+                                <div style="display:flex; gap: 8px; flex-direction: column; margin-top:4px;">
+                                    <input type="text" id="discord-webhook" class="store-input"
+                                        placeholder="Paste Webhook URL..."
+                                        style="width:100%;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.2);padding:8px;border-radius:6px;color:#fff;font-size:0.8rem;">
+                                    <div style="display:flex;gap:6px;">
+                                        <button id="save-discord-btn" class="btn-primary"
+                                            style="padding:6px;font-size:0.8rem;flex:1;"
+                                            onclick="saveDiscordWebhook()">Save
+                                            Token</button>
+                                        <button class="btn-secondary" style="padding:6px;font-size:0.8rem;"
+                                            onclick="testWebhook()" title="Send test message">🧪 Test</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-header" data-i18n="store_region">Store Region</div>
+                        <div class="region-flags" style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <button class="region-btn" data-locale="pl-pl" onclick="changeLocale('pl-pl')"
+                                title="Poland"><span class="fi fi-pl"></span></button>
+                            <button class="region-btn" data-locale="de-de" onclick="changeLocale('de-de')"
+                                title="Germany"><span class="fi fi-de"></span></button>
+                            <button class="region-btn" data-locale="en-us" onclick="changeLocale('en-us')"
+                                title="USA"><span class="fi fi-us"></span></button>
+                            <button class="region-btn" data-locale="en-gb" onclick="changeLocale('en-gb')"
+                                title="UK"><span class="fi fi-gb"></span></button>
+                            <button class="region-btn" data-locale="fr-fr" onclick="changeLocale('fr-fr')"
+                                title="France"><span class="fi fi-fr"></span></button>
+                            <button class="region-btn" data-locale="it-it" onclick="changeLocale('it-it')"
+                                title="Italy"><span class="fi fi-it"></span></button>
+                            <button class="region-btn" data-locale="es-es" onclick="changeLocale('es-es')"
+                                title="Spain"><span class="fi fi-es"></span></button>
+                            <button class="region-btn" data-locale="nl-nl" onclick="changeLocale('nl-nl')"
+                                title="Netherlands"><span class="fi fi-nl"></span></button>
+                        </div>
+                    </div>
+
+
+                </aside>
+
+                <main class="store-main">
+                    <div class="store-main-header">
+                        <h2 class="section-title" data-i18n="product_catalog">Product Catalog</h2>
+                        <div style="display:flex;gap:8px;align-items:center">
+                            <label class="select-all-label">
+                                <input type="checkbox" id="catalog-select-all" onclick="toggleCatalogSelectAll()">
+                                <span data-i18n="select_all">Select all</span>
+                            </label>
+                            <button id="refresh-catalog-btn" class="btn-secondary add-selected-btn"
+                                onclick="refreshCatalog()" title="Refresh catalog from server">
+                                🔄 <span data-i18n="refresh">Refresh</span>
+                            </button>
+                            <button id="add-target-btn" class="btn-primary add-selected-btn"
+                                onclick="addSelectedTargets()" disabled><span data-i18n="track_selected">Track
+                                    Selected</span> (0)</button>
+                        </div>
+                    </div>
+                    <div class="store-grid" id="catalog-container">
+                        <!-- Catalog cards loaded from JSON -->
+                    </div>
+                </main>
+            </div>
+        </section>
+    </main>
+
+    <audio id="alert-sound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"
+        preload="auto"></audio>
+
+    <script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/logs.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/catalog.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+
+    <!-- Price History Modal -->
+    <div id="price-history-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-col">
+                    <h3 id="modal-sku-subtitle" class="sku-badge" style="display:inline-block; margin-bottom:5px;"></h3>
+                    <h2 id="modal-product-name">Price History</h2>
+                </div>
+                <div class="range-btn-group">
+                    <button class="range-btn" data-months="1" onclick="changeHistoryRange(1)">1M</button>
+                    <button class="range-btn active" data-months="3" onclick="changeHistoryRange(3)">3M</button>
+                    <button class="range-btn" data-months="6" onclick="changeHistoryRange(6)">6M</button>
+                    <button class="range-btn" data-months="12" onclick="changeHistoryRange(12)">12M</button>
+                </div>
+                <button class="action-btn" onclick="closeHistoryModal()" title="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <canvas id="priceHistoryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Logs Modal -->
+    <div id="logs-modal" class="modal-overlay" onclick="if(event.target===this)closeLogsModal()">
+        <div class="modal-container" style="max-width:900px;">
+            <div class="modal-header">
+                <div class="modal-title-col">
+                    <h2 style="margin:0;font-size:1.2rem;" data-i18n="system_logs">System Logs</h2>
+                </div>
+                <button class="action-btn" onclick="closeLogsModal()" title="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height:400px;overflow-y:auto;">
+                <ul class="history-list" id="logs-list">
+                    <li class="history-item" style="color:var(--text-secondary)">No activity logs yet.</li>
+                </ul>
+            </div>
+            <div class="modal-footer"
+                style="display:flex;gap:6px;padding:12px 16px;border-top:1px solid var(--border-color);">
+                <button class="btn-secondary" style="font-size:0.75rem;padding:4px 10px;" onclick="clearLogs('hour')"
+                    data-i18n="clear_last_hour">Clear Last Hour</button>
+                <button class="btn-secondary" style="font-size:0.75rem;padding:4px 10px;" onclick="clearLogs('day')"
+                    data-i18n="clear_last_day">Clear Last Day</button>
+                <button class="btn-secondary" style="font-size:0.75rem;padding:4px 10px;color:var(--danger);"
+                    onclick="clearLogs('all')" data-i18n="clear_all">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

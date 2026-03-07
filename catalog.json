@@ -1,0 +1,2180 @@
+{
+  "products": [
+    {
+      "series": "Black",
+      "sku": "WD1003FZEX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD2003FZEX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD4006FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD6004FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD6004FZWX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD8002FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD8002FZWX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WD102FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-black-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black D10",
+      "sku": "WDBA3P0080HBK-EESN",
+      "name": "8TB WD_BLACK\\u2122  D10 Game Drive",
+      "capacity": "8 TB",
+      "url_path": "external-drives/wd-black-d10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black D10 Xbox",
+      "sku": "WDBA5E0120HBK-EESN",
+      "name": "WD_BLACK\\u2122 D10 Game Drive for Xbox\\u2122 12TB",
+      "capacity": "12 TB",
+      "url_path": "external-drives/wd-black-d10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black Mobile",
+      "sku": "WD5000LPSX",
+      "name": "WD Black\\u2122 500GB 2.5-inch Performance Hard Drive",
+      "capacity": "500 GB",
+      "url_path": "internal-drives/wd-black-mobile-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black Mobile",
+      "sku": "WD10SPSX",
+      "name": "WD Black\\u2122 1TB 2.5-inch Performance Hard Drive",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-black-mobile-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBA2W0020BBK-WES1",
+      "name": "WD_BLACK P10 Game Drive 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBA2W0020BPK-WES1",
+      "name": "WD_BLACK P10 Game Drive 2TB Pink",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBA3A0040BBK-WESN",
+      "name": "WD_BLACK P10 Game Drive 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBZ7D0040BPK-WESN",
+      "name": "WD_BLACK P10 Game Drive 4TB Pink",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBA3A0050BBK-WESN",
+      "name": "WD_BLACK P10 Game Drive 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBZ7D0060BBK-WESN",
+      "name": "WD_BLACK P10 Game Drive 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10",
+      "sku": "WDBZ7D0060BPK-WESN",
+      "name": "WD_BLACK P10 Game Drive 6TB Pink",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBA6U0010BBK-WESN",
+      "name": "1TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBA6U0020BBK-WESN",
+      "name": "2TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBA5G0030BBK-WESN",
+      "name": "3TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "3 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBA5G0040BBK-WESN",
+      "name": "4TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBA5G0050BBK-WESN",
+      "name": "5TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black P10 Xbox",
+      "sku": "WDBZRG0060BBK-WESN",
+      "name": "6TB WD_BLACK\\u2122  P10 Game Drive for Xbox\\u2122",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-black-p10-game-drive-for-xbox-usb-3-2-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Black",
+      "sku": "WDBSLA0010HNC-ERSN",
+      "name": "WD_BLACK\\u2122 3.5-inch Performance Hard Drive 1TB",
+      "capacity": "1 TB",
+      "url_path": "outlet/internal-drives/wd-black-desktop-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Black",
+      "sku": "WD4005FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "outlet/internal-drives/wd-black-desktop-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Black",
+      "sku": "WD6003FZBX",
+      "name": "WD_BLACK\\u2122 Gaming Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "outlet/internal-drives/wd-black-desktop-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD5000AZLX",
+      "name": "WD Blue 3.5in PC Hard Drive - 500GB",
+      "capacity": "500 GB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD5000AZRZ",
+      "name": "WD Blue 3.5in PC Hard Drive - 500GB",
+      "capacity": "500 GB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD10EZEX",
+      "name": "WD Blue 3.5in PC Hard Drive - 1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD10EZRZ",
+      "name": "WD Blue 3.5in PC Hard Drive -1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD20EZBX",
+      "name": "WD Blue 3.5in PC Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD20EZRZ",
+      "name": "WD Blue 3.5in PC Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD30EZAX",
+      "name": "WD Blue 3.5in PC Hard Drive - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD30EZAZ",
+      "name": "WD Blue 3.5in PC Hard Drive - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD30EZZX",
+      "name": "WD Blue 3.5in PC Hard Drive - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD40EZAX",
+      "name": "WD Blue 3.5in PC Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD40EZZX",
+      "name": "WD Blue 3.5in PC Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD60EZAX",
+      "name": "WD Blue 3.5in PC Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD80EAAZ",
+      "name": "WD Blue 3.5in PC Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD80EAZZ",
+      "name": "WD Blue 3.5in PC Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD100EAGZ",
+      "name": "WD Blue PC Desktop Hard Drive - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Desktop",
+      "sku": "WD120EAGZ",
+      "name": "WD Blue PC Desktop Hard Drive - 12TB",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-blue-desktop-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Mobile",
+      "sku": "WD5000LPZX",
+      "name": "WD Blue\\u2122 500GB PC Hard Drive",
+      "capacity": "500 GB",
+      "url_path": "internal-drives/wd-blue-mobile-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Mobile",
+      "sku": "WD10SPZX",
+      "name": "WD Blue\\u2122 1TB PC Hard Drive",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-blue-mobile-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Blue Mobile",
+      "sku": "WD20SPZX",
+      "name": "WD Blue\\u2122 2TB PC Hard Drive",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-blue-mobile-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0040HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 4TB",
+      "capacity": "4 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0060HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 6TB",
+      "capacity": "6 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0080HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 8TB",
+      "capacity": "8 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0100HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 10TB",
+      "capacity": "10 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0120HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 12TB",
+      "capacity": "12 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0140HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 14TB",
+      "capacity": "14 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0160HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 16TB",
+      "capacity": "16 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0180HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 18TB",
+      "capacity": "18 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0200HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 20TB",
+      "capacity": "20 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0220HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 22TB",
+      "capacity": "22 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0240HBK-EESN",
+      "name": "WD Elements Desktop Hard Drive 24TB",
+      "capacity": "24 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Desktop",
+      "sku": "WDBWLG0260HBK-EESN",
+      "name": "WD Elements\\u00AE Desktop Hard Drive 26TB",
+      "capacity": "26 TB",
+      "url_path": "external-drives/wd-elements-desktop-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBUZG7500ABK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 750GB",
+      "capacity": "750 GB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBUZG0010BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 1TB",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBU6Y0015BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 1.5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBU6Y0020BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBU6Y0030BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 3TB",
+      "capacity": "3 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBU6Y0040BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBU6Y0050BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements Portable",
+      "sku": "WDBHJS0060BBK-WESN",
+      "name": "WD Elements\\u2122 USB 3.0 Portable Hard Drive 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-elements-portable-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBEPK5000ABK-WESN",
+      "name": "WD Elements\\u2122 SE 500GB",
+      "capacity": "500 GB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBEPK0010BBK-WESN",
+      "name": "WD Elements\\u2122 SE 1TB",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBEPK0020BBK-WESN",
+      "name": "WD Elements\\u2122 SE 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBJRT0040BBK-WESN",
+      "name": "WD Elements\\u2122 SE 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBJRT0050BBK-WESN",
+      "name": "WD Elements\\u2122 SE 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Elements SE",
+      "sku": "WDBG8A0060BBK-WESN",
+      "name": "WD Elements SE 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-elements-se-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD1005FBYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD2005FBYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD4004FRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD6004FRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD8005FRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD102KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD103KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD122KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 12TB",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD142KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD161KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD181KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD203KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 20TB",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD221KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD242KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD Internal Storage - 24TB",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD261KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 26TB",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/wd-gold-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD4003FRYZ",
+      "name": "WD Gold\\u2122 Enterprise Class SATA HDD - 4TB",
+      "capacity": "4 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD6003FRYZ",
+      "name": "WD Gold\\u2122 Enterprise Class SATA HDD - 6TB",
+      "capacity": "6 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD8004FRYZ",
+      "name": "WD Gold\\u2122 Enterprise Class SATA HDD - 8TB",
+      "capacity": "8 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD141KRYZ",
+      "name": "WD Gold\\u2122 Enterprise Class SATA HDD - 14TB",
+      "capacity": "14 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD202KRYZ",
+      "name": "WD Gold\\u2122 Enterprise Class SATA HDD - 20TB",
+      "capacity": "20 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Gold",
+      "sku": "WD241KRYZ",
+      "name": "WD Gold Enterprise Class SATA HDD - 24TB",
+      "capacity": "24 TB",
+      "url_path": "outlet/internal-drives/wd-gold-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0040HBK-EESN",
+      "name": "My Book Desktop Hard Drive 4TB",
+      "capacity": "4 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0060HBK-EESN",
+      "name": "My Book Desktop Hard Drive 6TB",
+      "capacity": "6 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0080HBK-EESN",
+      "name": "My Book Desktop Hard Drive 8TB",
+      "capacity": "8 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0120HBK-EESN",
+      "name": "My Book Desktop Hard Drive 12TB",
+      "capacity": "12 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0140HBK-EESN",
+      "name": "My Book Desktop Hard Drive 14TB",
+      "capacity": "14 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0160HBK-EESN",
+      "name": "My Book Desktop Hard Drive 16TB",
+      "capacity": "16 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0180HBK-EESN",
+      "name": "My Book Desktop Hard Drive 18TB",
+      "capacity": "18 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0220HBK-EESN",
+      "name": "My Book Desktop Hard Drive 22TB",
+      "capacity": "22 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0240HBK-EESN",
+      "name": "My Book Desktop Hard Drive 24TB",
+      "capacity": "24 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book",
+      "sku": "WDBBGB0260HBK-EESN",
+      "name": "My Book Desktop Hard Drive 26TB",
+      "capacity": "26 TB",
+      "url_path": "external-drives/wd-my-book-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0160JBK-EESN",
+      "name": "WD My Book Duo 16TB",
+      "capacity": "16 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0200JBK-EESN",
+      "name": "WD My Book Duo 20TB",
+      "capacity": "20 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0240JBK-EESN",
+      "name": "WD My Book Duo 24TB",
+      "capacity": "24 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0280JBK-EESN",
+      "name": "WD My Book Duo 28TB",
+      "capacity": "28 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0360JBK-EESN",
+      "name": "WD My Book Duo 36TB",
+      "capacity": "36 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Book Duo",
+      "sku": "WDBFBE0440JBK-EESN",
+      "name": "WD My Book Duo 44TB",
+      "capacity": "44 TB",
+      "url_path": "external-drives/wd-my-book-duo-usb-3-1-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0010BBK-WESN",
+      "name": "My Passport 1TB Black",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0010BBL-WESN",
+      "name": "My Passport 1TB Blue",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0010BRD-WESN",
+      "name": "My Passport 1TB Red",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0020BBK-WESN",
+      "name": "My Passport 2TB Black",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0020BBL-WESN",
+      "name": "My Passport 2TB Blue",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBYVG0020BRD-WESN",
+      "name": "My Passport 2TB Red",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0040BBK-WESN",
+      "name": "My Passport 4TB Black",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0040BBL-WESN",
+      "name": "My Passport 4TB Blue",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0040BRD-WESN",
+      "name": "My Passport 4TB Red",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0040BWT-WESN",
+      "name": "My Passport 4TB White",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0050BBK-WESN",
+      "name": "My Passport 5TB Black",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0050BBL-WESN",
+      "name": "My Passport 5TB Blue",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0050BRD-WESN",
+      "name": "My Passport 5TB Red",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBPKJ0050BWT-WESN",
+      "name": "My Passport 5TB White",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBR9S0060BBK-WESN",
+      "name": "My Passport 6TB Black",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBR9S0060BBL-WESN",
+      "name": "My Passport 6TB Blue",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBR9S0060BRD-WESN",
+      "name": "My Passport 6TB Red",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB 3.0",
+      "sku": "WDBR9S0060BWT-WESN",
+      "name": "My Passport 6TB White",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB-C",
+      "sku": "WDBWML0020BGY-WESN",
+      "name": "My Passport Portable Hard Drive, Works with USB-C - 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-phdd-usb-c",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB-C",
+      "sku": "WDBRMD0040BGY-WESN",
+      "name": "My Passport Portable Hard Drive, Works with USB-C - 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-phdd-usb-c",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB-C",
+      "sku": "WDBRMD0050BGY-WESN",
+      "name": "My Passport Portable Hard Drive, Works with USB-C - 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-phdd-usb-c",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport USB-C",
+      "sku": "WDBY3J0060BGY-WESN",
+      "name": "My Passport Portable Hard Drive, Works with USB-C - 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-phdd-usb-c",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBC3C0010BSL-WESN",
+      "name": "My Passport Ultra 1TB Silver",
+      "capacity": "1 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBC3C0020BBL-WESN",
+      "name": "My Passport Ultra 2TB Blue",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBC3C0020BGD-WESN",
+      "name": "My Passport Ultra 2TB Gold",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBC3C0020BSL-WESN",
+      "name": "My Passport Ultra 2TB Silver",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBFTM0040BBL-WESN",
+      "name": "My Passport Ultra 4TB Blue",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBFTM0040BGD-WESN",
+      "name": "My Passport Ultra - 4TB Gold",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBFTM0040BSL-WESN",
+      "name": "My Passport Ultra 4TB Silver",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBFTM0050BBL-WESN",
+      "name": "My Passport Ultra 5TB Blue",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra",
+      "sku": "WDBEJA0060BBL-WESN",
+      "name": "My Passport Ultra 6TB Blue",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra Anniversary",
+      "sku": "WDBJXT0020BGN-WESN",
+      "name": "My Passport Ultra, 20th Emerald Anniversary Edition - 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-anniversary-edition",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra Anniversary",
+      "sku": "WDBECU0060BGN-WESN",
+      "name": "My Passport Ultra, 20th Emerald Anniversary Edition - 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-anniversary-edition",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra for Mac",
+      "sku": "WDBKYJ0020BSL-WESN",
+      "name": "My Passport Ultra for Mac 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-for-mac-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra for Mac",
+      "sku": "WDBPMV0040BSL-WESN",
+      "name": "My Passport Ultra for Mac 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-for-mac-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra for Mac",
+      "sku": "WDBPMV0050BSL-WESN",
+      "name": "My Passport Ultra for Mac 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-for-mac-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport Ultra for Mac",
+      "sku": "WDBGKC0060BSL-WESN",
+      "name": "My Passport Ultra for Mac 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-ultra-for-mac-usb-c-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport for Mac",
+      "sku": "WDBA2D0020BBL-WESN",
+      "name": "My Passport for Mac 2TB",
+      "capacity": "2 TB",
+      "url_path": "portable-drives/wd-my-passport-for-mac-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport for Mac",
+      "sku": "WDBA2F0040BBL-WESN",
+      "name": "My Passport for Mac 4TB",
+      "capacity": "4 TB",
+      "url_path": "portable-drives/wd-my-passport-for-mac-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport for Mac",
+      "sku": "WDBA2F0050BBL-WESN",
+      "name": "My Passport for Mac 5TB",
+      "capacity": "5 TB",
+      "url_path": "portable-drives/wd-my-passport-for-mac-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "My Passport for Mac",
+      "sku": "WDBK6C0060BBL-WESN",
+      "name": "My Passport for Mac 6TB",
+      "capacity": "6 TB",
+      "url_path": "portable-drives/wd-my-passport-for-mac-usb-3-0-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD11PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD22PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD23PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD33PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD34PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD43PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD44PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD60PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD62PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD64PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD85PURZ",
+      "name": "WD Purple Surveillance Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD121PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 12TB",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-purple-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD8002PURP",
+      "name": "WD Purple Pro - 8TB Surveillance Hard Drive",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD101PURP",
+      "name": "WD Purple Pro - 10TB Surveillance Hard Drive",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD102PURP",
+      "name": "WD Purple Pro - 10TB Surveillance Hard Drive",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD122PURP",
+      "name": "WD Purple Pro - 12TB Surveillance Hard Drive",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD121PURP",
+      "name": "WD Purple Pro - 12TB Surveillance Hard Drive",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD142PURP",
+      "name": "WD Purple Pro - 14TB Surveillance Hard Drive",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD181PURP",
+      "name": "WD Purple Pro Surveillance Hard Drive - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD221PURP",
+      "name": "WD Purple Pro - 22TB Surveillance Hard Drive",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD241PURP",
+      "name": "WD Purple Pro - 24TB Surveillance Hard Drive",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD260PURP",
+      "name": "WD Purple Pro - 26TB Surveillance Hard Drive",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/wd-purple-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD141PURP",
+      "name": "WD Purple Pro - 14TB Surveillance Hard Drive",
+      "capacity": "14 TB",
+      "url_path": "outlet/internal-drives/wd-purple-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Purple Pro",
+      "sku": "WD240PURP",
+      "name": "WD Purple Pro - 24TB Surveillance Hard Drive",
+      "capacity": "24 TB",
+      "url_path": "outlet/internal-drives/wd-purple-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Purple",
+      "sku": "WDBGKN0020HNC-ERSN",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 2TB",
+      "capacity": "2 TB",
+      "url_path": "outlet/internal-drives/wd-purple-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD63PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 6TB",
+      "capacity": "6 TB",
+      "url_path": "outlet/internal-drives/wd-purple-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD82PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive - 8TB",
+      "capacity": "8 TB",
+      "url_path": "outlet/internal-drives/wd-purple-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Purple",
+      "sku": "WD101PURZ",
+      "name": "WD Purple\\u2122 Surveillance Hard Drive 10TB",
+      "capacity": "10 TB",
+      "url_path": "outlet/internal-drives/wd-purple-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Red",
+      "sku": "WD20EFAX",
+      "name": "WD Red 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-red-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red",
+      "sku": "WD30EFAX",
+      "name": "WD Red 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-red-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red",
+      "sku": "WD40EFAX",
+      "name": "WD Red 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-red-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red",
+      "sku": "WD60EFAX",
+      "name": "WD Red 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-red-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD10EFRX",
+      "name": "WD Red\\u2122 Plus - 1TB",
+      "capacity": "1 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD20EFPX",
+      "name": "WD Red\\u2122 Plus - 2TB",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD30EFPX",
+      "name": "WD Red\\u2122 Plus - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD30EFZX",
+      "name": "WD Red\\u2122 Plus - 3TB",
+      "capacity": "3 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD40EFPX",
+      "name": "WD Red\\u2122 Plus - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD40EFZZ",
+      "name": "WD Red\\u2122 Plus - 4TB",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD60EFPX",
+      "name": "WD Red\\u2122 Plus - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD60EFZX",
+      "name": "WD Red\\u2122 Plus - 6TB",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD80EFPX",
+      "name": "WD Red Plus - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD80EFZZ",
+      "name": "WD Red Plus - 8TB",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD100EFGX",
+      "name": "WD Red\\u2122 Plus - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD101EFBX",
+      "name": "WD Red\\u2122 Plus - 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Plus",
+      "sku": "WD120EFGX",
+      "name": "WD Red\\u2122 Plus - 12TB",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-red-plus-sata-3-5-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD2002FFSX",
+      "name": "WD Red\\u2122 Pro 2TB NAS Hard Drive",
+      "capacity": "2 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD4005FFBX",
+      "name": "WD Red\\u2122 Pro 4TB NAS Hard Drive",
+      "capacity": "4 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD6005FFBX",
+      "name": "WD Red\\u2122 Pro 6TB NAS Hard Drive",
+      "capacity": "6 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD8005FFBX",
+      "name": "WD Red\\u2122 Pro 8TB NAS  Hard Drive",
+      "capacity": "8 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD103KFBX",
+      "name": "WD Red Pro NAS Hard Drive 10TB",
+      "capacity": "10 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD122KFBX",
+      "name": "WD Red Pro NAS Hard Drive 12TB",
+      "capacity": "12 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD142KFGX",
+      "name": "WD Red\\u2122 Pro 14TB NAS Hard Drive",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD161KFGX",
+      "name": "WD Red\\u2122 Pro 16TB NAS Hard Drive",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD181KFGX",
+      "name": "WD Red\\u2122 Pro 18TB NAS Hard Drive",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD202KFGX",
+      "name": "WD Red\\u2122 Pro 20TB NAS Hard Drive",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD221KFGX",
+      "name": "WD Red\\u2122 Pro 22TB NAS Hard Drive",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD241KFGX",
+      "name": "WD Red\\u2122 Pro 24TB NAS Hard Drive",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD260KFGX",
+      "name": "WD Red\\u2122 Pro 26TB NAS Hard Drive",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/wd-red-pro-sata-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD4003FFBX",
+      "name": "WD Red\\u2122 Pro 4TB NAS Hard Drive",
+      "capacity": "4 TB",
+      "url_path": "outlet/internal-drives/wd-red-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD141KFGX",
+      "name": "WD Red\\u2122 Pro 14TB NAS Hard Drive",
+      "capacity": "14 TB",
+      "url_path": "outlet/internal-drives/wd-red-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD201KFGX",
+      "name": "WD Red\\u2122 Pro 20TB NAS Hard Drive",
+      "capacity": "20 TB",
+      "url_path": "outlet/internal-drives/wd-red-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Red Pro",
+      "sku": "WD240KFGX",
+      "name": "WD Red\\u2122 Pro 24TB NAS Hard Drive",
+      "capacity": "24 TB",
+      "url_path": "outlet/internal-drives/wd-red-pro-sata-hdd",
+      "category": "clearance"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38527",
+      "name": "Ultrastar\\u00AE DC HC550 - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38528",
+      "name": "Ultrastar\\u00AE DC HC550 - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38529",
+      "name": "Ultrastar\\u00AE DC HC550 - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38580",
+      "name": "Ultrastar\\u00AE DC HC550 - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38581",
+      "name": "Ultrastar\\u00AE DC HC550 - 14TB",
+      "capacity": "14 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38356",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38357",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38358",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38460",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38461",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38462",
+      "name": "Ultrastar\\u00AE DC HC550 - 16TB",
+      "capacity": "16 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38352",
+      "name": "Ultrastar\\u00AE DC HC550 - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38353",
+      "name": "Ultrastar\\u00AE DC HC550 - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38354",
+      "name": "Ultrastar\\u00AE DC HC550 - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38458",
+      "name": "Ultrastar\\u00AE DC HC550 - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC550",
+      "sku": "0F38459",
+      "name": "Ultrastar\\u00AE DC HC550 - 18TB",
+      "capacity": "18 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc550-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC560",
+      "sku": "0F38651",
+      "name": "Ultrastar\\u00AE DC HC560 - 20TB",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc560-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC560",
+      "sku": "0F38652",
+      "name": "Ultrastar\\u00AE DC HC560 - 20TB",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc560-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC560",
+      "sku": "0F38784",
+      "name": "Ultrastar\\u00AE DC HC560 - 20TB",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc560-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC560",
+      "sku": "0F38785",
+      "name": "Ultrastar\\u00AE DC HC560 - 20TB",
+      "capacity": "20 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc560-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC570",
+      "sku": "0F48051",
+      "name": "Ultrastar DC HC570 - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc570-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC570",
+      "sku": "0F48052",
+      "name": "Ultrastar DC HC570 - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc570-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC570",
+      "sku": "0F48154",
+      "name": "Ultrastar DC HC570 - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc570-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC570",
+      "sku": "0F48155",
+      "name": "Ultrastar DC HC570 - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc570-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62784",
+      "name": "Ultrastar DC HC580 Data Center HDD SATA SED - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62785",
+      "name": "Ultrastar DC HC580 Data Center HDD SATA SE - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62790",
+      "name": "Ultrastar DC HC580 Data Center HDD SAS SED - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62791",
+      "name": "Ultrastar DC HC580 Data Center HDD SAS SE - 22TB",
+      "capacity": "22 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62795",
+      "name": "Ultrastar DC HC580 Data Center HDD SATA SED - 24TB",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62796",
+      "name": "Ultrastar DC HC580 Data Center HDD SATA SE - 24TB",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62801",
+      "name": "Ultrastar DC HC580 Data Center HDD SAS SED - 24TB",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC580",
+      "sku": "0F62802",
+      "name": "Ultrastar DC HC580 Data Center HDD SAS SE - 24TB",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc580-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F59373",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 24TB SAS SE",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65628",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 24TB SAS TCG",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65642",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 24TB SATA TCG",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65684",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 24TB SATA SE",
+      "capacity": "24 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F59375",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 26TB SAS SE",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65638",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 26TB SAS TCG",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65650",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 26TB SATA TCG",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC590",
+      "sku": "0F65672",
+      "name": "Ultrastar DC HC590 Data Center Hard Drive - 26TB SATA SE",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc590-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC670",
+      "sku": "ultrastar-dc-hc670-26-tb",
+      "name": "Ultrastar DC HC670 - 26 TB",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc670-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-26tb-se",
+      "name": "Ultrastar DC HC680 - 26TB Base (SE)",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-26tb-sed",
+      "name": "Ultrastar DC HC680 - 26TB SED",
+      "capacity": "26 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-27tb-se",
+      "name": "Ultrastar DC HC680 - 27TB Base (SE)",
+      "capacity": "27 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-27tb-sed",
+      "name": "Ultrastar DC HC680 - 27TB SED",
+      "capacity": "27 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-28tb-se",
+      "name": "Ultrastar DC HC680 - 28TB Base (SE)",
+      "capacity": "28 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC680",
+      "sku": "ultrastar-dc-hc680-28tb-sed",
+      "name": "Ultrastar DC HC680 - 28TB SED",
+      "capacity": "28 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc680-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200AL4201",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SAS TCG",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200AL4204",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SAS SE",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200ALN601",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SATA TCG",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200ALN604",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SATA SE",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200ALN6L1",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SATA TCG",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723200ALN6L4",
+      "name": "Ultrastar DC HC690 Data Center Drive - 30TB SATA SE",
+      "capacity": "30 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220AL4201",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SAS TCG",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220AL4204",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SATA TCG",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220ALN601",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SATA TCG",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220ALN604",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SATA SE",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220ALN6L1",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SATA SE",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    },
+    {
+      "series": "Ultrastar DC HC690",
+      "sku": "WSH723220ALN6L4",
+      "name": "Ultrastar DC HC690 Data Center Drive - 32TB SAS SE",
+      "capacity": "32 TB",
+      "url_path": "internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "category": "standard"
+    }
+  ]
+}

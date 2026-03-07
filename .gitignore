@@ -1,0 +1,30 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and temp outputs
+*.log
+log*.txt
+output.txt
+utag.txt
+
+# HTML dumps from scraping
+page.html
+page_pretty.html
+wd_html_dump.html
+
+# Catalog backups
+catalog_backup.json
+catalog_new.json
+
+# Screenshots
+*.png
+!static/images/**
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
