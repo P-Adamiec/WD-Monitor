@@ -15,7 +15,7 @@ services:
   wd-monitor:
     build: .
     image: wd-monitor:dev
-    container_name: wd-monitor:dev
+    container_name: wd-monitor-dev
     ports:
       - "5000:5000"
     restart: unless-stopped
