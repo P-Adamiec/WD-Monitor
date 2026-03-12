@@ -14,8 +14,8 @@ services:
 
   wd-monitor:
     build: .
-    image: wd-monitor:latest
-    container_name: wd-monitor
+    image: wd-monitor:dev
+    container_name: wd-monitor:dev
     ports:
       - "5000:5000"
     restart: unless-stopped
@@ -23,6 +23,13 @@ services:
       - db
     environment:
       - DATABASE_URL=postgresql://monitor_user:monitor_password@db:5432/monitor_db
+    volumes:
+      #Local PC files
+      - ./templates:/app/templates
+      - ./static:/app/static
+      - ./app.py:/app/app.py
+      - ./backend:/app/backend
+      - ./catalog.json:/app/catalog.json
 
 volumes:
   pgdata:
