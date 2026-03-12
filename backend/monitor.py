@@ -30,11 +30,12 @@ def parse_product_data(product_data):
 
     is_error = False
     if stock_code == 'inStock':
-        is_available = True
         if purchasable:
+            is_available = True
             status_message = "In Stock"
             is_purchasable = True
         else:
+            is_available = False
             status_message = "Inquiry Only"
             is_purchasable = False
     elif stock_code == 'outOfStock':
