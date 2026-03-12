@@ -23,6 +23,7 @@ services:
       - db
     environment:
       - DATABASE_URL=postgresql://monitor_user:monitor_password@db:5432/monitor_db
+      - APP_ENV=dev
     volumes:
       #Local PC files
       - ./templates:/app/templates

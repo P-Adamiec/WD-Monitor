@@ -18,7 +18,9 @@ def dicts_to_json(rows):
 
 @api.route("/")
 def index():
-    return render_template("index.html")
+    import os
+    app_env = os.environ.get("APP_ENV", "prod")
+    return render_template("index.html", app_env=app_env)
 
 
 @api.route("/api/status")
