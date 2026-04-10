@@ -28,3 +28,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# SQLite database volume
+data/
+monitor.db

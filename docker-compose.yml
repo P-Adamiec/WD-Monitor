@@ -1,17 +1,4 @@
 services:
-  db:
-    image: postgres:15-alpine
-    container_name: wd-postgres
-    restart: always
-    environment:
-      POSTGRES_USER: monitor_user
-      POSTGRES_PASSWORD: monitor_password
-      POSTGRES_DB: monitor_db
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   wd-monitor:
     build: .
     image: wd-monitor:latest
@@ -19,10 +6,8 @@ services:
     ports:
       - "5000:5000"
     restart: unless-stopped
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgresql://monitor_user:monitor_password@db:5432/monitor_db
+    volumes:
+      - wd_data:/data
 
 volumes:
-  pgdata:
+  wd_data:

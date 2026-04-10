@@ -1,17 +1,4 @@
 services:
-  db:
-    image: postgres:15-alpine
-    container_name: wd-postgres
-    restart: always
-    environment:
-      POSTGRES_USER: monitor_user
-      POSTGRES_PASSWORD: monitor_password
-      POSTGRES_DB: monitor_db
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   wd-monitor:
     build: .
     image: wd-monitor:dev
@@ -19,18 +6,14 @@ services:
     ports:
       - "5000:5000"
     restart: unless-stopped
-    depends_on:
-      - db
     environment:
-      - DATABASE_URL=postgresql://monitor_user:monitor_password@db:5432/monitor_db
       - APP_ENV=dev
     volumes:
-      #Local PC files
+      # Persistent data (SQLite DB)
+      - ./data:/data
+      # Local PC files (live reload)
       - ./templates:/app/templates
       - ./static:/app/static
       - ./app.py:/app/app.py
       - ./backend:/app/backend
       - ./catalog.json:/app/catalog.json
-
-volumes:
-  pgdata:

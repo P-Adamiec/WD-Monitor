@@ -20,8 +20,8 @@ def _load_dotenv():
 
 _load_dotenv()
 
-# Database
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://monitor_user:monitor_password@db:5432/monitor_db")
+# Database — SQLite file path (volume-mounted in Docker)
+DB_PATH = os.environ.get("DB_PATH", "/data/monitor.db")
 
 # Monitoring
 CHECK_INTERVAL_SECONDS = int(os.environ.get("CHECK_INTERVAL_SECONDS", 60))

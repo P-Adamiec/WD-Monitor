@@ -1,7 +1,6 @@
 """Background monitoring thread — checks WD API for product availability."""
 import time
 from collections import defaultdict
-from psycopg2.extras import RealDictCursor
 from curl_cffi import requests
 
 from backend.database import get_db_connection, parse_price
@@ -142,11 +141,11 @@ def batch_check_availability(skus, locale):
 def get_check_interval(conn):
     """Read check interval from DB settings, fallback to default."""
     try:
-        with conn.cursor() as cur:
-            cur.execute("SELECT value FROM settings WHERE key = 'check_interval'")
-            row = cur.fetchone()
-            if row:
-                return max(10, int(row[0]))  # minimum 10 seconds
+        cur = conn.cursor()
+        cur.execute("SELECT value FROM settings WHERE key = 'check_interval'")
+        row = cur.fetchone()
+        if row:
+            return max(10, int(row[0]))  # minimum 10 seconds
     except Exception:
         pass
     return DEFAULT_CHECK_INTERVAL
@@ -163,21 +162,21 @@ def monitor_thread():
 
         # Check global pause setting
         try:
-            with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                cur.execute("SELECT value FROM settings WHERE key = 'monitoring_paused'")
-                row = cur.fetchone()
-                if row and row['value'].lower() == 'true':
-                    conn.close()
-                    time.sleep(interval)
-                    continue
+            cur = conn.cursor()
+            cur.execute("SELECT value FROM settings WHERE key = 'monitoring_paused'")
+            row = cur.fetchone()
+            if row and row['value'].lower() == 'true':
+                conn.close()
+                time.sleep(interval)
+                continue
         except Exception:
             pass
 
         # Fetch ALL targets across ALL locales
         try:
-            with conn.cursor(cursor_factory=RealDictCursor) as cur:
-                cur.execute("SELECT * FROM targets")
-                db_targets = cur.fetchall()
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM targets")
+            db_targets = [dict(r) for r in cur.fetchall()]
         except Exception as e:
             print(f"DB read error before check: {e}")
             conn.close()
@@ -228,102 +227,102 @@ def monitor_thread():
                         newly_started.append(t["sku"])
 
                     try:
-                        with conn.cursor() as cur:
-                            prev_available = t["is_available"]
-                            prev_status = t["status"]
+                        cur = conn.cursor()
+                        prev_available = bool(t["is_available"])
+                        prev_status = t["status"]
 
-                            # FALSE POSITIVE PREVENTION
-                            if is_error and prev_available:
+                        # FALSE POSITIVE PREVENTION
+                        if is_error and prev_available:
+                            cur.execute('''
+                                INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
+                                VALUES (?, ?, ?, ?, ?)
+                            ''', (t["sku"], locale, f"{t['sku']}: {status_message} (kept previous state)", int(prev_available), 'error'))
+                            cur.execute('UPDATE targets SET last_check = CURRENT_TIMESTAMP WHERE sku = ? AND locale = ?', (t["sku"], locale))
+                            conn.commit()
+                            continue
+
+                        state_changed = (prev_status != "Oczekiwanie...") and (prev_available != is_available)
+
+                        # PRICE CHANGE DETECTION
+                        effective_price = price if price else t["price"]
+
+                        if not is_error and prev_status != "Oczekiwanie..." and effective_price and t["price"]:
+                            old_num = parse_price(t["price"])
+                            new_num = parse_price(effective_price)
+                            if old_num and new_num and abs(old_num - new_num) > 0.01:
+                                pct = ((new_num - old_num) / old_num) * 100
+                                if pct < -0.5:
+                                    cur.execute('''
+                                        INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
+                                        VALUES (?, ?, ?, ?, ?)
+                                    ''', (t["sku"], locale, f"{name} ({t['sku']}): Price dropped {abs(pct):.0f}% → {effective_price}", int(is_available), 'price_drop'))
+                                elif pct > 0.5:
+                                    cur.execute('''
+                                        INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
+                                        VALUES (?, ?, ?, ?, ?)
+                                    ''', (t["sku"], locale, f"{name} ({t['sku']}): Price increased {pct:.0f}% → {effective_price}", int(is_available), 'price_increase'))
+
+                        # Log significant state changes
+                        if state_changed:
+                            if is_available and not prev_available:
                                 cur.execute('''
                                     INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                                    VALUES (%s, %s, %s, %s, %s)
-                                ''', (t["sku"], locale, f"{t['sku']}: {status_message} (kept previous state)", prev_available, 'error'))
-                                cur.execute('UPDATE targets SET last_check = CURRENT_TIMESTAMP WHERE sku = %s AND locale = %s', (t["sku"], locale))
-                                conn.commit()
-                                continue
+                                    VALUES (?, ?, ?, ?, ?)
+                                ''', (t["sku"], locale, f"{name} ({t['sku']}): Back in stock!", 1, 'available'))
+                            elif not is_available and prev_available:
+                                cur.execute('''
+                                    INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
+                                    VALUES (?, ?, ?, ?, ?)
+                                ''', (t["sku"], locale, f"{name} ({t['sku']}): Sold out", 0, 'sold_out'))
 
-                            state_changed = (prev_status != "Oczekiwanie...") and (prev_available != is_available)
+                            if is_available and not prev_available and t.get("notify", True):
+                                cur.execute("SELECT value FROM settings WHERE key = 'discord_webhook'")
+                                webhook_row = cur.fetchone()
+                                if webhook_row and webhook_row[0]:
+                                    alert_target = {**t, 'name': name}
+                                    send_discord_alert(webhook_row[0], alert_target, price)
+                        elif prev_status == "Oczekiwanie...":
+                            if is_available and t.get("notify", True):
+                                cur.execute("SELECT value FROM settings WHERE key = 'discord_webhook'")
+                                webhook_row = cur.fetchone()
+                                if webhook_row and webhook_row[0]:
+                                    alert_target = {**t, 'name': name}
+                                    send_discord_alert(webhook_row[0], alert_target, price)
 
-                            # PRICE CHANGE DETECTION
-                            effective_price = price if price else t["price"]
-
-                            if not is_error and prev_status != "Oczekiwanie..." and effective_price and t["price"]:
-                                old_num = parse_price(t["price"])
-                                new_num = parse_price(effective_price)
-                                if old_num and new_num and abs(old_num - new_num) > 0.01:
-                                    pct = ((new_num - old_num) / old_num) * 100
-                                    if pct < -0.5:
-                                        cur.execute('''
-                                            INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                                            VALUES (%s, %s, %s, %s, %s)
-                                        ''', (t["sku"], locale, f"{name} ({t['sku']}): Price dropped {abs(pct):.0f}% → {effective_price}", is_available, 'price_drop'))
-                                    elif pct > 0.5:
-                                        cur.execute('''
-                                            INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                                            VALUES (%s, %s, %s, %s, %s)
-                                        ''', (t["sku"], locale, f"{name} ({t['sku']}): Price increased {pct:.0f}% → {effective_price}", is_available, 'price_increase'))
-
-                            # Log significant state changes
-                            if state_changed:
-                                if is_available and not prev_available:
-                                    cur.execute('''
-                                        INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                                        VALUES (%s, %s, %s, %s, %s)
-                                    ''', (t["sku"], locale, f"{name} ({t['sku']}): Back in stock!", True, 'available'))
-                                elif not is_available and prev_available:
-                                    cur.execute('''
-                                        INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                                        VALUES (%s, %s, %s, %s, %s)
-                                    ''', (t["sku"], locale, f"{name} ({t['sku']}): Sold out", False, 'sold_out'))
-
-                                if is_available and not prev_available and t.get("notify", True):
-                                    cur.execute("SELECT value FROM settings WHERE key = 'discord_webhook'")
-                                    webhook_row = cur.fetchone()
-                                    if webhook_row and webhook_row[0]:
-                                        alert_target = {**t, 'name': name}
-                                        send_discord_alert(webhook_row[0], alert_target, price)
-                            elif prev_status == "Oczekiwanie...":
-                                if is_available and t.get("notify", True):
-                                    cur.execute("SELECT value FROM settings WHERE key = 'discord_webhook'")
-                                    webhook_row = cur.fetchone()
-                                    if webhook_row and webhook_row[0]:
-                                        alert_target = {**t, 'name': name}
-                                        send_discord_alert(webhook_row[0], alert_target, price)
-
-                            # PRICE HISTORY — per-locale
-                            if state_changed and effective_price:
+                        # PRICE HISTORY — per-locale
+                        if state_changed and effective_price:
+                            cur.execute('''
+                                INSERT INTO price_history (sku, price, is_available, locale)
+                                VALUES (?, ?, ?, ?)
+                            ''', (t["sku"], effective_price, int(is_available), locale))
+                        elif effective_price:
+                            cur.execute('''
+                                SELECT id FROM price_history
+                                WHERE sku = ? AND locale = ? AND date(logged_at) = date('now')
+                                LIMIT 1
+                            ''', (t["sku"], locale))
+                            if not cur.fetchone():
                                 cur.execute('''
                                     INSERT INTO price_history (sku, price, is_available, locale)
-                                    VALUES (%s, %s, %s, %s)
-                                ''', (t["sku"], effective_price, is_available, locale))
-                            elif effective_price:
-                                cur.execute('''
-                                    SELECT id FROM price_history
-                                    WHERE sku = %s AND locale = %s AND logged_at::date = CURRENT_DATE
-                                    LIMIT 1
-                                ''', (t["sku"], locale))
-                                if not cur.fetchone():
-                                    cur.execute('''
-                                        INSERT INTO price_history (sku, price, is_available, locale)
-                                        VALUES (%s, %s, %s, %s)
-                                    ''', (t["sku"], effective_price, is_available, locale))
+                                    VALUES (?, ?, ?, ?)
+                                ''', (t["sku"], effective_price, int(is_available), locale))
 
-                            # Update target status
-                            if state_changed:
-                                cur.execute('''
-                                    UPDATE targets
-                                    SET is_available = %s, status = %s, name = %s, price = %s,
-                                        last_check = CURRENT_TIMESTAMP, stock_level = %s,
-                                        last_state_change = CURRENT_TIMESTAMP
-                                    WHERE sku = %s AND locale = %s
-                                ''', (is_available, status_message, name, price if price else t["price"], stock_level, t["sku"], locale))
-                            else:
-                                cur.execute('''
-                                    UPDATE targets
-                                    SET is_available = %s, status = %s, name = %s, price = %s,
-                                        last_check = CURRENT_TIMESTAMP, stock_level = %s
-                                    WHERE sku = %s AND locale = %s
-                                ''', (is_available, status_message, name, price if price else t["price"], stock_level, t["sku"], locale))
+                        # Update target status
+                        if state_changed:
+                            cur.execute('''
+                                UPDATE targets
+                                SET is_available = ?, status = ?, name = ?, price = ?,
+                                    last_check = CURRENT_TIMESTAMP, stock_level = ?,
+                                    last_state_change = CURRENT_TIMESTAMP
+                                WHERE sku = ? AND locale = ?
+                            ''', (int(is_available), status_message, name, price if price else t["price"], stock_level, t["sku"], locale))
+                        else:
+                            cur.execute('''
+                                UPDATE targets
+                                SET is_available = ?, status = ?, name = ?, price = ?,
+                                    last_check = CURRENT_TIMESTAMP, stock_level = ?
+                                WHERE sku = ? AND locale = ?
+                            ''', (int(is_available), status_message, name, price if price else t["price"], stock_level, t["sku"], locale))
 
                         conn.commit()
                     except Exception as e:
@@ -336,15 +335,15 @@ def monitor_thread():
         # Batch log: group newly started trackings
         if newly_started:
             try:
-                with conn.cursor() as cur:
-                    if len(newly_started) == 1:
-                        msg = f"Started tracking {newly_started[0]}"
-                    else:
-                        msg = f"Started tracking ({len(newly_started)}): {', '.join(newly_started)}"
-                    cur.execute('''
-                        INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
-                        VALUES (%s, %s, %s, %s, %s)
-                    ''', (newly_started[0], 'system', msg, False, 'tracking_started'))
+                cur = conn.cursor()
+                if len(newly_started) == 1:
+                    msg = f"Started tracking {newly_started[0]}"
+                else:
+                    msg = f"Started tracking ({len(newly_started)}): {', '.join(newly_started)}"
+                cur.execute('''
+                    INSERT INTO history_logs (target_sku, target_locale, status_msg, is_available, log_type)
+                    VALUES (?, ?, ?, ?, ?)
+                ''', (newly_started[0], 'system', msg, 0, 'tracking_started'))
                 conn.commit()
             except Exception as e:
                 print(f"Batch log error: {e}")

@@ -1,18 +1,29 @@
-"""Database connection and schema initialization."""
-import time
+"""Database connection and schema initialization — SQLite backend."""
+import os
 import re
-import psycopg2
-from psycopg2.extras import RealDictCursor
-from backend.config import DATABASE_URL, DEFAULT_LOCALE
+import time
+import sqlite3
+from backend.config import DB_PATH, DEFAULT_LOCALE
 
 
 def get_db_connection():
+    """Return a sqlite3 connection with Row factory, or None on error."""
     try:
-        conn = psycopg2.connect(DATABASE_URL)
+        os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+        conn = sqlite3.connect(DB_PATH, timeout=10)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.execute("PRAGMA foreign_keys=ON")
         return conn
     except Exception as e:
-        print(f"Cannot connect to database: {e}")
+        print(f"Cannot open database: {e}")
         return None
+
+
+def _column_exists(cur, table, column):
+    """Check if a column exists in a table."""
+    cur.execute(f"PRAGMA table_info({table})")
+    return any(row[1] == column for row in cur.fetchall())
 
 
 def init_db():
@@ -21,103 +32,59 @@ def init_db():
         conn = get_db_connection()
         if conn is not None:
             try:
-                with conn.cursor() as cur:
-                    # Settings table (needed early for locale)
-                    cur.execute('''
-                        CREATE TABLE IF NOT EXISTS settings (
-                            key VARCHAR(100) PRIMARY KEY,
-                            value TEXT
-                        )
-                    ''')
+                cur = conn.cursor()
 
-                    # ---------- TARGETS TABLE ----------
-                    cur.execute('''
-                        CREATE TABLE IF NOT EXISTS targets (
-                            sku VARCHAR(50),
-                            locale VARCHAR(10) NOT NULL DEFAULT 'pl-pl',
-                            url TEXT NOT NULL,
-                            name TEXT,
-                            status TEXT,
-                            is_available BOOLEAN DEFAULT FALSE,
-                            last_check TIMESTAMP,
-                            price TEXT,
-                            notify BOOLEAN DEFAULT TRUE,
-                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                            stock_level INTEGER DEFAULT 0,
-                            last_state_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                            PRIMARY KEY (sku, locale)
-                        )
-                    ''')
+                # ---------- SETTINGS TABLE ----------
+                cur.execute('''
+                    CREATE TABLE IF NOT EXISTS settings (
+                        key TEXT PRIMARY KEY,
+                        value TEXT
+                    )
+                ''')
 
-                    # Migration: if old sku-only PK exists, migrate to composite PK
-                    cur.execute('''
-                        SELECT COUNT(*) FROM information_schema.table_constraints
-                        WHERE table_name = 'targets'
-                          AND constraint_type = 'PRIMARY KEY'
-                          AND constraint_name = 'targets_pkey'
-                    ''')
-                    has_pk = cur.fetchone()[0] > 0
-                    if has_pk:
-                        # Check if the PK is sku-only (1 column) vs composite (2 columns)
-                        cur.execute('''
-                            SELECT COUNT(*) FROM information_schema.key_column_usage
-                            WHERE table_name = 'targets' AND constraint_name = 'targets_pkey'
-                        ''')
-                        pk_col_count = cur.fetchone()[0]
-                        if pk_col_count == 1:
-                            print("Migrating targets PK from (sku) to (sku, locale)...")
-                            # Ensure locale column exists
-                            cur.execute("ALTER TABLE targets ADD COLUMN IF NOT EXISTS locale VARCHAR(10) DEFAULT 'pl-pl'")
-                            cur.execute("ALTER TABLE targets ADD COLUMN IF NOT EXISTS stock_level INTEGER DEFAULT 0")
-                            cur.execute("ALTER TABLE targets ADD COLUMN IF NOT EXISTS last_state_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-                            cur.execute("ALTER TABLE targets ADD COLUMN IF NOT EXISTS created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-                            # Drop all FK constraints referencing targets
-                            cur.execute('''
-                                SELECT tc.constraint_name, tc.table_name
-                                FROM information_schema.table_constraints tc
-                                JOIN information_schema.referential_constraints rc
-                                    ON tc.constraint_name = rc.constraint_name
-                                JOIN information_schema.table_constraints pk
-                                    ON rc.unique_constraint_name = pk.constraint_name
-                                WHERE pk.table_name = 'targets' AND tc.constraint_type = 'FOREIGN KEY'
-                            ''')
-                            fk_constraints = cur.fetchall()
-                            for fk_name, fk_table in fk_constraints:
-                                cur.execute(f"ALTER TABLE {fk_table} DROP CONSTRAINT IF EXISTS {fk_name}")
-                                print(f"  Dropped FK {fk_name} on {fk_table}")
-                            # Drop old PK, create new composite PK
-                            cur.execute("ALTER TABLE targets DROP CONSTRAINT targets_pkey")
-                            cur.execute("ALTER TABLE targets ADD PRIMARY KEY (sku, locale)")
-                            print("  Migrated targets PK to (sku, locale)")
+                # ---------- TARGETS TABLE ----------
+                cur.execute('''
+                    CREATE TABLE IF NOT EXISTS targets (
+                        sku TEXT NOT NULL,
+                        locale TEXT NOT NULL DEFAULT 'pl-pl',
+                        url TEXT NOT NULL,
+                        name TEXT,
+                        status TEXT,
+                        is_available INTEGER DEFAULT 0,
+                        last_check TIMESTAMP,
+                        price TEXT,
+                        notify INTEGER DEFAULT 1,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        stock_level INTEGER DEFAULT 0,
+                        last_state_change TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        PRIMARY KEY (sku, locale)
+                    )
+                ''')
 
-                    # ---------- HISTORY LOGS TABLE ----------
-                    cur.execute('''
-                        CREATE TABLE IF NOT EXISTS history_logs (
-                            id SERIAL PRIMARY KEY,
-                            target_sku VARCHAR(50),
-                            target_locale VARCHAR(10) DEFAULT 'pl-pl',
-                            status_msg TEXT,
-                            is_available BOOLEAN,
-                            logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                            log_type VARCHAR(30) DEFAULT 'status_change'
-                        )
-                    ''')
-                    cur.execute("ALTER TABLE history_logs ADD COLUMN IF NOT EXISTS log_type VARCHAR(30) DEFAULT 'status_change'")
-                    cur.execute("ALTER TABLE history_logs ADD COLUMN IF NOT EXISTS target_locale VARCHAR(10) DEFAULT 'pl-pl'")
+                # ---------- HISTORY LOGS TABLE ----------
+                cur.execute('''
+                    CREATE TABLE IF NOT EXISTS history_logs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        target_sku TEXT,
+                        target_locale TEXT DEFAULT 'pl-pl',
+                        status_msg TEXT,
+                        is_available INTEGER,
+                        logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        log_type TEXT DEFAULT 'status_change'
+                    )
+                ''')
 
-                    # ---------- PRICE HISTORY TABLE ----------
-                    cur.execute('''
-                        CREATE TABLE IF NOT EXISTS price_history (
-                            id SERIAL PRIMARY KEY,
-                            sku VARCHAR(50),
-                            locale VARCHAR(10) DEFAULT 'pl-pl',
-                            price TEXT,
-                            is_available BOOLEAN DEFAULT TRUE,
-                            logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                        )
-                    ''')
-                    cur.execute("ALTER TABLE price_history ADD COLUMN IF NOT EXISTS is_available BOOLEAN DEFAULT TRUE")
-                    cur.execute("ALTER TABLE price_history ADD COLUMN IF NOT EXISTS locale VARCHAR(10) DEFAULT 'pl-pl'")
+                # ---------- PRICE HISTORY TABLE ----------
+                cur.execute('''
+                    CREATE TABLE IF NOT EXISTS price_history (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        sku TEXT,
+                        locale TEXT DEFAULT 'pl-pl',
+                        price TEXT,
+                        is_available INTEGER DEFAULT 1,
+                        logged_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                ''')
 
                 conn.commit()
                 print("Database ready and initialized!")
@@ -128,10 +95,10 @@ def init_db():
                 if conn:
                     conn.close()
 
-        print(f"Waiting for database to start... (attempt {attempt + 1}/{max_retries})")
+        print(f"Waiting for database... (attempt {attempt + 1}/{max_retries})")
         time.sleep(3)
 
-    print("Warning: Failed to connect and initialize database on startup.")
+    print("Warning: Failed to initialize database on startup.")
 
 
 def get_locale():
@@ -139,11 +106,11 @@ def get_locale():
     conn = get_db_connection()
     if conn:
         try:
-            with conn.cursor() as cur:
-                cur.execute("SELECT value FROM settings WHERE key = 'locale'")
-                row = cur.fetchone()
-                if row and row[0]:
-                    return row[0]
+            cur = conn.cursor()
+            cur.execute("SELECT value FROM settings WHERE key = 'locale'")
+            row = cur.fetchone()
+            if row and row[0]:
+                return row[0]
         except Exception:
             pass
         finally:

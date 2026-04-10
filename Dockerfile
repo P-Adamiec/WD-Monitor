@@ -7,6 +7,9 @@ RUN apt-get update && \
     apt-get install -y curl ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
+# Create data directory for SQLite
+RUN mkdir -p /data
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

@@ -60,14 +60,14 @@ def send_discord_alert(webhook_url, target, price):
     try:
         conn = get_db_connection()
         if conn:
-            with conn.cursor() as cur:
-                cur.execute("SELECT key, value FROM settings WHERE key IN ('notify_discord', 'ui_language')")
-                for r in cur.fetchall():
-                    if r[0] == 'notify_discord' and str(r[1]).lower() == 'false':
-                        conn.close()
-                        return
-                    elif r[0] == 'ui_language':
-                        ui_lang = r[1]
+            cur = conn.cursor()
+            cur.execute("SELECT key, value FROM settings WHERE key IN ('notify_discord', 'ui_language')")
+            for r in cur.fetchall():
+                if r[0] == 'notify_discord' and str(r[1]).lower() == 'false':
+                    conn.close()
+                    return
+                elif r[0] == 'ui_language':
+                    ui_lang = r[1]
             conn.close()
 
     except Exception as e:
