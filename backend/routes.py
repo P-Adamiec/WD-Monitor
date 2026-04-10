@@ -42,6 +42,11 @@ def api_status():
             targets_rows = cur.fetchall()
 
             targets = []
+            # Build catalog lookup for enrichment
+            catalog_by_sku = {}
+            for cp in catalog.CATALOG_PRODUCTS:
+                catalog_by_sku[cp.get('sku', '')] = cp
+
             for t in targets_rows:
                 d = dict(t)
                 d['last_check'] = d['last_check'].strftime("%Y-%m-%d %H:%M:%S") if d['last_check'] else 'Never'
@@ -50,6 +55,19 @@ def api_status():
                     d['last_state_change'] = d['last_state_change'].strftime("%Y-%m-%d %H:%M:%S") if d['last_state_change'] else None
                 if 'created_at' in d:
                     d['created_at'] = d['created_at'].strftime("%Y-%m-%d %H:%M:%S") if d['created_at'] else None
+
+                # Enrich with catalog metadata
+                cat_entry = catalog_by_sku.get(d.get('sku', ''))
+                if cat_entry:
+                    d['category'] = cat_entry.get('category', 'standard')
+                    d['capacity'] = cat_entry.get('capacity', '')
+                    # Use catalog name if current name is just the SKU
+                    if d.get('name') == d.get('sku') and cat_entry.get('name'):
+                        d['name'] = cat_entry['name']
+                else:
+                    d['category'] = 'standard'
+                    d['capacity'] = ''
+
                 targets.append(d)
 
             cur.execute("SELECT logged_at as time, status_msg as status, is_available as available, log_type FROM history_logs ORDER BY id DESC LIMIT 100")
@@ -106,6 +124,25 @@ def api_clear_logs():
         conn.close()
 
 
+TEST_TRANSLATIONS = {
+    'en': {
+        'title': '🧪 Test Message',
+        'description': 'If you see this message, your Discord webhook is working correctly!',
+        'footer': 'WD Monitor • Webhook Test',
+    },
+    'pl': {
+        'title': '🧪 Wiadomość testowa',
+        'description': 'Jeśli widzisz tę wiadomość, Twój webhook Discord działa poprawnie!',
+        'footer': 'WD Monitor • Test webhooka',
+    },
+    'de': {
+        'title': '🧪 Testnachricht',
+        'description': 'Wenn Sie diese Nachricht sehen, funktioniert Ihr Discord-Webhook korrekt!',
+        'footer': 'WD Monitor • Webhook-Test',
+    },
+}
+
+
 @api.route("/api/discord/test", methods=["POST"])
 def test_discord_webhook():
     """Send a test message to the configured Discord webhook."""
@@ -114,20 +151,28 @@ def test_discord_webhook():
         return jsonify({"error": "DB connection error"}), 500
     try:
         with conn.cursor() as cur:
-            cur.execute("SELECT value FROM settings WHERE key = 'discord_webhook'")
-            row = cur.fetchone()
-            if not row or not row[0]:
+            cur.execute("SELECT key, value FROM settings WHERE key IN ('discord_webhook', 'ui_language')")
+            rows = cur.fetchall()
+            webhook_url = None
+            ui_lang = 'en'
+            for r in rows:
+                if r[0] == 'discord_webhook':
+                    webhook_url = r[1]
+                elif r[0] == 'ui_language':
+                    ui_lang = r[1] if r[1] in TEST_TRANSLATIONS else 'en'
+
+            if not webhook_url:
                 return jsonify({"error": "No webhook configured"}), 400
 
-            webhook_url = row[0]
+            tt = TEST_TRANSLATIONS.get(ui_lang, TEST_TRANSLATIONS['en'])
             payload = json.dumps({
                 "username": "WD Monitor",
                 "avatar_url": "https://www.westerndigital.com/content/dam/store/en-us/assets/favicon/favicon.ico",
                 "embeds": [{
-                    "title": "🧪 Test Message",
-                    "description": "If you see this message, your Discord webhook is working correctly!",
+                    "title": tt['title'],
+                    "description": tt['description'],
                     "color": 3447003,
-                    "footer": {"text": "WD Monitor • Webhook Test"},
+                    "footer": {"text": tt['footer']},
                     "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
                 }]
             }).encode('utf-8')

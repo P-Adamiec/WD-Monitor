@@ -108,6 +108,13 @@ function updateUI(data) {
         const stockLevel = target.stock_level || 0;
         const stockBadge = stockLevel > 0 ? `<span class="stock-badge">${stockLevel} ${t('left')}</span>` : '';
 
+        // Clearance badge from catalog metadata
+        const isClearance = target.category === 'clearance';
+        const clearanceBadge = isClearance ? `<span class="store-card-cat-badge cat-clearance">${t('clearance')}</span>` : '';
+
+        // Capacity from catalog metadata
+        const capacityBadge = target.capacity ? `<span class="capacity-badge-sm">${target.capacity}</span>` : '';
+
         // Build URL using current locale
         const storeUrl = target.url ? target.url.replace(/\/[a-z]{2}-[a-z]{2}\//, `/${currentLocale}/`) : target.url;
 
@@ -117,18 +124,20 @@ function updateUI(data) {
                     <input type="checkbox" class="bulk-checkbox" data-sku="${target.sku}" ${bulkSelectedSkus.has(target.sku) ? 'checked' : ''}
                         onclick="toggleBulkSelect('${target.sku}', event, ${index})" title="Select for bulk action"
                         style="margin-top:3px;cursor:pointer;accent-color:var(--primary);flex-shrink:0;">
-                    <div>
-                        <div class="compact-card-name">${target.name}</div>
-                        <div class="compact-card-meta">
-                            <span class="sku-badge-sm">${target.sku}</span>
-                            <span class="price-badge-sm">${target.price || '—'}</span>
-                            ${stockBadge}
-                        </div>
+                    <div style="flex:1;min-width:0;">
+                        <div class="compact-card-name">${target.name} ${capacityBadge} ${clearanceBadge}</div>
                     </div>
                 </div>
                 <div class="compact-card-status">
                     <span class="status-dot-text ${statusClass}">${statusDot} ${statusText}</span>
                 </div>
+            </div>
+            <div class="compact-card-meta" style="padding-left:24px;">
+                <span class="sku-badge-sm">${target.sku}</span>
+                <span style="display:flex;gap:6px;align-items:center;">
+                    ${stockBadge}
+                    <span class="price-badge-sm">${target.price || '—'}</span>
+                </span>
             </div>
             <div class="compact-card-bottom">
                 <span class="compact-card-time">${t('last_check')} ${toLocalTime(target.last_check)}</span>
@@ -182,8 +191,8 @@ function triggerAlert(productName) {
     }
 
     if (globalSendPush && Notification.permission === 'granted') {
-        new Notification('WD Drive In Stock!', {
-            body: `${productName} is now available. Click to visit the store.`,
+        new Notification(t('push_title'), {
+            body: t('push_body').replace('{name}', productName),
             icon: 'https://www.westerndigital.com/content/dam/store/en-us/assets/favicon/favicon.ico'
         });
     }

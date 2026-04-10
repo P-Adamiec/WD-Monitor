@@ -204,9 +204,10 @@ h1 {
 .compact-card-meta {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 6px;
     margin-top: 3px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
 .sku-badge-sm {
@@ -256,6 +257,7 @@ h1 {
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     padding-top: 6px;
+    margin-top: auto;
 }
 
 .compact-card-time {
@@ -975,6 +977,17 @@ h1 {
     border-radius: 4px;
     background: rgba(245, 158, 11, 0.2);
     color: #f59e0b;
+    white-space: nowrap;
+}
+
+/* Capacity badge on tracked cards */
+.capacity-badge-sm {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
     white-space: nowrap;
 }
 
