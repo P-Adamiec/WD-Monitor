@@ -56,15 +56,18 @@ def send_discord_alert(webhook_url, target, price):
     if not webhook_url:
         return
 
+    ui_lang = None
     try:
         conn = get_db_connection()
         if conn:
             with conn.cursor() as cur:
-                cur.execute("SELECT value FROM settings WHERE key = 'notify_discord'")
-                res = cur.fetchone()
-                if res and str(res[0]).lower() == 'false':
-                    conn.close()
-                    return
+                cur.execute("SELECT key, value FROM settings WHERE key IN ('notify_discord', 'ui_language')")
+                for r in cur.fetchall():
+                    if r[0] == 'notify_discord' and str(r[1]).lower() == 'false':
+                        conn.close()
+                        return
+                    elif r[0] == 'ui_language':
+                        ui_lang = r[1]
             conn.close()
 
     except Exception as e:
@@ -84,7 +87,10 @@ def send_discord_alert(webhook_url, target, price):
         locale = target.get('locale', 'en-us')
 
         # Get localized strings
-        lang = LOCALE_LANG.get(locale, 'en')
+        if ui_lang and ui_lang in DISCORD_TRANSLATIONS:
+            lang = ui_lang
+        else:
+            lang = LOCALE_LANG.get(locale, 'en')
         dt = DISCORD_TRANSLATIONS.get(lang, DISCORD_TRANSLATIONS['en'])
 
         fields = [

@@ -48,7 +48,9 @@ const TRANSLATIONS = {
         test_webhook: 'Test',
         save: 'Save',
         check_interval: 'Interval',
-        left: 'left'
+        left: 'left',
+        push_title: 'WD Drive In Stock!',
+        push_body: '{name} is now available. Click to visit the store.'
     },
     pl: {
         subtitle: 'Monitor dostępności produktów w czasie rzeczywistym',
@@ -97,7 +99,9 @@ const TRANSLATIONS = {
         test_webhook: 'Testuj',
         save: 'Zapisz',
         check_interval: 'Interwał',
-        left: 'szt.'
+        left: 'szt.',
+        push_title: 'Dysk WD dostępny!',
+        push_body: '{name} jest teraz dostępny. Kliknij, aby odwiedzić sklep.'
     },
     de: {
         subtitle: 'Live-Verfügbarkeitstracker für mehrere Produkte',
@@ -146,7 +150,9 @@ const TRANSLATIONS = {
         test_webhook: 'Testen',
         save: 'Speichern',
         check_interval: 'Intervall',
-        left: 'übrig'
+        left: 'übrig',
+        push_title: 'WD-Laufwerk auf Lager!',
+        push_body: '{name} ist jetzt verfügbar. Klicken Sie, um den Shop zu besuchen.'
     }
 };
 
@@ -162,6 +168,13 @@ function setLanguage(lang) {
     const flags = document.querySelectorAll('.lang-btn');
     const langIndex = { 'pl': 0, 'en': 1, 'de': 2 };
     if (flags[langIndex[lang]]) flags[langIndex[lang]].classList.add('active');
+
+    // Sync to backend so Discord gets the right language
+    fetch('/api/settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ui_language: lang })
+    }).catch(e => console.error(e));
 
     // Force re-render of dynamic elements to apply new translations instantly
     if (typeof updateUI === 'function' && typeof currentTargetsList !== 'undefined') {
@@ -194,4 +207,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const flags = document.querySelectorAll('.lang-btn');
     const langIndex = { 'pl': 0, 'en': 1, 'de': 2 };
     if (flags[langIndex[currentLang]]) flags[langIndex[currentLang]].classList.add('active');
+
+    // Sync current lang on load
+    fetch('/api/settings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ui_language: currentLang })
+    }).catch(e => console.error(e));
 });
